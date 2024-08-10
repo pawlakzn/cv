@@ -1,0 +1,192 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% 1.1: added tracking and letter-spacing for prettier lower caps, added `~` for language levels
+% 1.0: initial release
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
+
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+\usepackage{fontawesome} % For icons
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]
+{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{2.5ex}
+
+{\centering \Large Paweł \textbf{\textsc{Lorenc}} \normalsize\par}
+
+% Centering without extra vertical spacing
+\null\hfill\includegraphics[width=0.65\textwidth]{pawel_lorenc.jpg}\hfill\null
+
+\vspace*{0.5ex} % Extra space after the picture
+
+\headleft{Profile}
+Backend developer with over 10 years of commercial experience. Highly organized and very communicative. I enjoy learning, developing my skills, and constantly improving. I have extensive experience working with international clients and primarily program in node.js with an inclination DevOps using AWS. Additionally, I am gaining valuable experience as a speaker.
+
+\headleft{Contact details}
+\small % To fit more content
+\MVAt\ {\small pawlakzn@gmail.com} \\[0.4ex]
+\Mobilefone\ +48\,785\,714\,832 \\[0.5ex]
+\faLinkedin\ \href{https://www.linkedin.com/in/pawel-lorenc/}{linkedin.com/in/pawel-lorenc} \\[0.1ex]
+\faBirthdayCake\ 25.08.1992 \\[0.4ex]
+\faHome\ Wrocław, Poland
+\normalsize
+
+\headleft{Skills / Technologies}
+\smaller{JavaScript / Typescript} \\
+\smaller{node.js (nest.js)} \\
+\smaller{SQL databases (PostgreSql / MySql)} \\
+\smaller{rest API / websockets} \\
+\smaller{AWS} \\
+\smaller{English C1, Polish (mother tounge)} \\
+\smaller{scrum, agile} \\
+
+\headleft{Education \dates{2011--2017}}  
+\textsc{Master and Bachelor in Computer Science} \\
+\textit{Wrocław University of Science and Technology} \\
+\smaller{Spec. \textit{Internet Engineering}} \\
+
+\headleft{Hobbies}
+\begin{itemize}
+\item football
+\item running
+\item hiking
+\item movies and tv series
+\end{itemize} 
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip1.5em% Left margin for the white area
+\begin{minipage}[t]{0.60\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{1.5ex}
+
+\headright{Experience}
+
+{\large \textsc{Backend Developer} at \textbf{RST Software}} \dates{2021.08--pres.} \vspace{0.2cm}\\
+\smaller{Creating and designing REST APIs using nest.js framework} \\
+\smaller{Focusing on backend software development and integrating with third-party APIs} \\
+\smaller{Ensuring code quality and proper architecture using design \\patterns and Domain-Driven Design (DDD)} \\
+\smaller{Utilizing AWS (SQS, Lambda, S3, Cloudwatch)} \\
+\smaller{Writing unit, integration and e2e tests} \\
+\smaller{Leading the Backend Community (internal company meetings)}
+
+\textbf{Projects:}
+\begin{itemize}[left=0em, labelsep=1em]
+    \item EV driver application \\
+{\small \textit{nest.js}, \textit{postgres (typeorm)}, \textit{redis sub/pub}, \textit{grpc}, \textit{aws (s3, lambda, sqs, cloudfront)}, \textit{image optimization (cdn)}, \textit{shared package}}
+    \item Car sharing app \\
+{\small\textit{nest.js}, \textit{firebase auth (FCM)}, \textit{stripe}, \textit{Mapbox}, \textit{Kafka}, \textit{Redis}, \textit{Robot Framework (tests e2e)}, \textit{websockets}}
+\end{itemize}
+
+\is % Item spacing -- defined in the preamble
+{\large \textsc{JavaScript Developer} at \textbf{Software Brothers}}\dates{2019.10--2021.07} \vspace{0.2cm}\\
+\smaller{Creating and designing REST APIs using different frameworks (nest.js, express, fastify, hapi.js)} \\
+\smaller{Working with greenfield projects (mostly startups)} \\
+\smaller{Working in agile teams (3-8 people) as backend developer}
+
+\textbf{Projects:}
+\begin{itemize}[left=0em, labelsep=1em]
+    \item \large{Community-powered business applications for the enterprise} \\
+    {\small \textit{nest.js}, \textit{api}, \textit{white label}, \textit{push notifications}, \textit{aws}, \textit{serverless}, \textit{pwa}}
+    \item \large{Custom CMS, Site Builder for SEO Affiliates} \\
+    {\small \textit{nest.js}, \textit{api}, \textit{microservices}, \textit{aws (s3, lambda, api gateway, cloudfront, acm)}, \textit{SSG - hugo}}
+    \item \large{Application which helps design your interior} \\
+    {\small \textit{k8s with AWS}, \textit{payment gateway}, \textit{adminJS}}
+    \item \large{Application which collects the list and reviews of your books} \\
+    {\small \textit{k8s with GCP}, \textit{hapi.js}, \textit{react native}}
+\end{itemize}
+
+\is
+{\large \textsc{PHP Developer} at \textbf{Software Brothers}} \dates{2018.06--2019.09} \vspace{0.2cm}\\
+{\small \textit{laravel}, \textit{symfony}, \textit{rest api}, \textit{docker}, \textit{github actions}, \textit{vue}, \textit{updating framework and php version}}
+
+\is
+{\large \textsc{PHP Developer} at \textbf{Fuzy / Close To Water}} \dates{2014.07 --2018.05} \vspace{0.2cm}\\
+\small{ \textit{laravel}, \textit{rest api}, \textit{mysql}, \textit{docker}, \textit{magento}, \textit{codeIgniter}, \textit{wordpress}, \textit{drupal}, \textit{joomla}}
+
+\headright{Public speaking}
+
+\normalsize{Time for a Change - Current and Future Time Handling in JS} \\
+\textit{4 Developers} \dates{2024.04.14}
+
+CJS or ESM - How to Package JavaScript? \\
+\textit{4 Developers Wrocław} \dates{2023.11.07}
+
+Cloud Your Files - Image Optimization in AWS \\
+\textit{CodeMeetings 20} \dates{2023.10.25}
+
+Serverless Autopsy - How to Survive It? \\
+\textit{CodeMeetings 16} \dates{2022.03.30}
+\\
+
+\small{I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 (General Data Protection Regulation)}.
+
+\end{minipage}
+\end{document}
